@@ -5,9 +5,8 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <time.h>
-
 #define EXTRA 1
-/*########################### IMPLEMENT YOUR CODE HERE #########################*/
+
 struct stack{
     int*stk;
     int top;
@@ -82,15 +81,6 @@ void stringReverse (char string[], struct stack * ptr){
     for (i = 0; i < strlen(string); i++)
         *(string+i) = pop(ptr);
 }
-
-/*##############################################################################*/
-
-/*
-                        DO NOT ALTER ANY CODE BELOW HERE
-You may comment out certain tests for debugging purposes, but your final
-submission should be unchanged from what is below.
-
-*/
 
 void main (){
     printf("Heap Memory in use: %lu\n", memory_used);
@@ -213,10 +203,6 @@ void main (){
     printf("Heap Memory in use: %lu\n", memory_used);
     printf("\t...Test #11 passed\n");
 
-    /******************** EXTRA CREDIT **************************/
-#if EXTRA
-    printf("\n=========== EXTRA CREDIT: Reverse a string ===========\n");
-
     char str1[] = "Hello";
     struct stack * str_stack1 = newStack(sizeof(str1));
     printf("Heap Memory in use: %lu\n", memory_used);
@@ -243,7 +229,7 @@ void main (){
     deleteStack(str_stack3);
     printf("Heap Memory in use: %lu\n", memory_used);
     printf("\t...Extra Credit passed\n");
-#endif
+    
     /******************** Test #12 **************************/
     printf("\n=========== Test # 12: Clean up memory ===========\n");
     deleteStack(s);
@@ -252,8 +238,4 @@ void main (){
     rand_stack = NULL;
     printf("Heap Memory in use: %lu\n", memory_used);
     printf("\t...Test #12 passed\n");
-
-#if EXTRA
-    printf("========== evaluate for EXTRA CREDIT ===========\n\n");
-#endif
 }
